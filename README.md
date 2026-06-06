@@ -60,4 +60,4 @@ Fullstack weather application.
 ## Contact
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-JulianAscenzi-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/juli%C3%A1n-ascenzi-19435b320/)
-[![Email](https://img.shields.io/badge/Email-contact-D14836?style=flat&logo=gmail)](mailto:julianascenzim@gmail.com)
+[![Email](https://img.shields.io/badge/Email-julianascenzim@gmail.com-D14836?style=flat&logo=gmail)](mailto:julianascenzim@gmail.com)
