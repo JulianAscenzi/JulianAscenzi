@@ -14,7 +14,7 @@ I care about clean architecture, meaningful tests, and systems that are easy to 
 - Docker · Docker Compose · GitHub Actions
 
 **Also working with**
-- Python · REST APIs · JWT · Testcontainers · Maven
+- Python · Linux & Sysadmin tools · REST APIs · JWT · Testcontainers · Maven
 
 ---
 
@@ -28,6 +28,16 @@ Production-ready REST API for hotel room management and booking workflows.
 - Multi-stage Dockerfile, Docker Compose with healthchecks, CI with GitHub Actions
 
 `Java 21` `Spring Boot 3` `PostgreSQL` `Redis` `Docker` `JUnit 5`
+
+---
+
+### [hpc-lab-toolkit](https://github.com/JulianAscenzi/hpc-lab-toolkit)
+Linux system administration toolkit for academic and scientific computing environments.
+- Developed core Python automation scripts for environment provisioning and user management in HPC structures
+- Implemented robust system checks and metrics logging tailored for scientific research clusters
+- Focused on reliability and script extensibility for multi-user Linux installations
+
+`Python` `Linux` `Bash` `Sysadmin` `Automation`
 
 ---
 
