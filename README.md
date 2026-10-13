@@ -1,8 +1,8 @@
 # Julián Ascenzi Márquez
 
-Backend developer focused on building production-ready APIs and services with Java and Python.
+Backend developer focused on building reliable APIs and services with Java and Python.
 
-I care about clean architecture, meaningful tests, and systems that are easy to understand and extend.
+I care about data consistency, meaningful tests, and systems that are easy to understand, operate, and extend. My projects combine backend development with reproducible delivery, observability, and applied machine learning.
 
 ---
 
@@ -16,28 +16,44 @@ I care about clean architecture, meaningful tests, and systems that are easy to 
 
 ## Skills
 
-**Languages & Frameworks:** Java 21, Spring Boot 3 & 4, Python, FastAPI
-**Data & Persistence:** PostgreSQL, Flyway, JPA / Hibernate
-**Security:** JWT, Spring Security, role-based access control
-**Testing:** JUnit 5, Mockito, pytest
-**Tools & DevOps:** Docker, Docker Compose, Git, OpenAPI / Swagger
-**ML / Data:** scikit-learn, pandas, Jupyter
+- **Languages & Frameworks:** Java 21, Spring Boot 4, Python, FastAPI
+- **Frontend:** React, TypeScript
+- **Data & Persistence:** PostgreSQL, Flyway, JPA / Hibernate, transactions, concurrency control
+- **Security:** JWT, Spring Security, BCrypt
+- **Testing:** JUnit 5, Mockito, pytest, Playwright
+- **Delivery & Infrastructure:** Docker, Docker Compose, Kubernetes (kind), Helm, GitHub Actions, GHCR, Terraform
+- **Observability:** Prometheus, Grafana, Micrometer, Alertmanager, SLI / SLOs
+- **ML / Data:** scikit-learn, pandas, Jupyter
 
 ---
 
 ## Projects
 
-**[StockFlow](https://github.com/JulianAscenzi/StockFlow)** · [Live demo](https://frontend-beta-plum-15.vercel.app/)
-Full-stack inventory and sales application for small businesses. It provides product and category management, transactional stock movements, sales confirmation with historical snapshots, a daily dashboard, and optional JWT-based administrator authentication. The backend is built around PostgreSQL/Flyway migrations, pessimistic locking to prevent overselling, and an extensive automated test suite. Includes a public demo and 314 automated tests.
-`Java 21` · `Spring Boot 4` · `React` · `TypeScript` · `PostgreSQL` · `Flyway` · `JWT` · `Docker`
+### [StockFlow](https://github.com/JulianAscenzi/StockFlow)
 
-**[Medical Appointments API](https://github.com/JulianAscenzi/medicalAppointments)**
-REST API for managing medical appointments (patients, doctors, scheduling), with JWT auth and role-based access control, business-rule validation (double-booking prevention, appointment status transitions), RFC 7807 error responses, and 98 tests.
-`Java 21` · `Spring Boot 3` · `PostgreSQL` · `JWT` · `Docker` · `JUnit 5`
+Full-stack inventory and sales application for small businesses, with product and category management, stock movements, sales history, a daily dashboard, and JWT-based administrator authentication.
 
-**[Churn Prediction](https://github.com/JulianAscenzi/churnPrediction)**
-End-to-end ML project predicting telecom customer churn: a tested, reproducible pipeline (data processing → training → evaluation) plus a FastAPI endpoint serving the trained model.
-`Python` · `scikit-learn` · `FastAPI` · `pandas` · `pytest`
+- **Data consistency:** transactional sales and stock updates, pessimistic locking to prevent overselling, persistent idempotency, and historical sale snapshots.
+- **Testing:** 385 backend tests and 28 Playwright scenarios in the latest documented checkpoints, covering PostgreSQL integration, concurrency, rollback, and browser flows.
+- **Reliability:** health probes, graceful shutdown, structured logs, Prometheus/Grafana dashboards, SLOs, error budgets, and recovery experiments in local Docker/Kubernetes environments.
+- **Delivery:** GitHub Actions tests OCI images before publishing to GHCR with SBOM/provenance; Helm deployments use image digests.
+- **Cloud design:** Terraform for AWS ECS Fargate, ALB, and RDS, with static validation and mock tests. AWS infrastructure has not been provisioned.
+
+`Java 21` · `Spring Boot 4` · `React` · `TypeScript` · `PostgreSQL` · `Flyway` · `Docker` · `Kubernetes` · `Helm` · `Terraform`
+
+[Architecture](https://github.com/JulianAscenzi/StockFlow/blob/main/docs/ARCHITECTURE.md) · [Test evidence and project status](https://github.com/JulianAscenzi/StockFlow/blob/main/docs/STATUS.md) · [Reliability experiments](https://github.com/JulianAscenzi/StockFlow/blob/main/docs/KUBERNETES.md)
+
+### [Churn Prediction](https://github.com/JulianAscenzi/churnPrediction)
+
+End-to-end machine learning project that predicts telecom customer churn using the Telco Customer Churn dataset, with a reproducible training/evaluation workflow and a FastAPI service for inference.
+
+- **Training:** data cleaning, encoding and scaling, a stratified train/test split, and a Random Forest classifier with balanced class weights.
+- **Evaluation:** accuracy, precision, recall, F1, and a confusion matrix to assess performance on imbalanced data.
+- **Inference:** a saved model artifact bundles the preprocessing metadata needed to process new customers consistently.
+- **API:** `POST /predict` returns a churn prediction and probability, with Pydantic input validation, a health endpoint, and interactive OpenAPI documentation.
+- **Testing:** data-processing tests use small synthetic DataFrames and run without downloading the dataset.
+
+`Python` · `scikit-learn` · `FastAPI` · `Pydantic` · `pandas` · `pytest` · `Jupyter`
 
 ---
 
